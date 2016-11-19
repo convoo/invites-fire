@@ -16,7 +16,7 @@ Simple way to manage and encourage invites while controlling early access to you
 
 ## \<invites-fire\>
 
-The core element that returns whether a user has early access and if they do.
+The core element that returns whether a user has early access.
 
 <!--
 ```
