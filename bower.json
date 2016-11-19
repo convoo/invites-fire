@@ -2,12 +2,14 @@
   "name": "invites-fire",
   "main": "invites-fire.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "polymerfire": "^0.10.3"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
     "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "login-fire": "^0.1.1"
   }
 }

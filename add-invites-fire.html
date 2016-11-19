@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`add-invites-fire`
+
+
+@demo demo/add.html 
+-->
+
+<dom-module id="add-invites-fire">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'add-invites-fire',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'add-invites-fire',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

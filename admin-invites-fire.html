@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`admin-invites-fire`
+
+
+@demo demo/admin.html 
+-->
+
+<dom-module id="admin-invites-fire">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'admin-invites-fire',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'admin-invites-fire',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
