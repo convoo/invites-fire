@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymerfire/firebase-query.html">
 
 <!--
 `invites-fire`
@@ -8,13 +9,9 @@
 -->
 
 <dom-module id="invites-fire">
+
   <template>
-    <style>
-      :host {
-        display: block;
-      }
-    </style>
-    <h2>Hello [[prop1]]</h2>
+    
   </template>
 
   <script>
@@ -23,11 +20,18 @@
       is: 'invites-fire',
 
       properties: {
-        prop1: {
+        userId: {
           type: String,
-          value: 'invites-fire',
+          observer: "_userChange"
         },
+        hasAccess: {
+          type: Boolean,
+          value: False
+        }
       },
+      _userChange: function(){
+
+      }
 
     });
   </script>
