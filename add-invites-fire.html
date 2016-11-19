@@ -1,4 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymerfire/firebase-document.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
 
 <!--
 `add-invites-fire`
@@ -14,7 +17,16 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+    <firebase-document id="invites" app-name="[[appName]]" path="/invites/{{userId}}"></firebase-document>
+    <paper-input 
+      id="email"
+      type="email"
+      error-message="Invalid email"
+      label="Email to invite" 
+      value="[[emailToInvite]]"
+      validator="email-validator" 
+      required auto-validate></paper-input>
+    <paper-button on-click="_addInvite" raised>Add</paper-button>
   </template>
 
   <script>
@@ -23,11 +35,15 @@
       is: 'add-invites-fire',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'add-invites-fire',
-        },
+        userId: String,
+        appName: String
       },
+
+      _addInvite: function(){
+        if(this.$$("#email").validate() && this.emailToInvite){
+          this.$$("#invites").ref.push({email: this.emailToInvite});
+        }
+      }
 
     });
   </script>

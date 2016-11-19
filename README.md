@@ -29,7 +29,7 @@ The core element that returns whether a user has early access.
 ```
 -->
 ```html
-<invites-fire user-id="{{user.uid}}" has-access="[[userHasAccess]]"></invites-fire>
+<invites-fire app-name="invites" user-id="{{user.uid}}" has-access="[[userHasAccess]]"></invites-fire>
 ```
 
 ## \<add-invites-fire\>
@@ -47,7 +47,7 @@ A form for users with access to invite others.
 ```
 -->
 ```html
-<add-invites-fire user-id="{{user.uid}}"></add-invites-fire>
+<add-invites-fire app-name="invites" user-id="{{user.uid}}"></add-invites-fire>
 ```
 
 
@@ -66,7 +66,7 @@ The admin interface for giving access to users requesting it.
 ```
 -->
 ```html
-<admin-invites-fire></admin-invites-fire>
+<admin-invites-fire app-name="invites"></admin-invites-fire>
 ```
 
 ## Contributing
