@@ -1,5 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../polymerfire/firebase-query.html">
+<link rel="import" href="../polymerfire/firebase-document.html">
 
 <!--
 `invites-fire`
@@ -11,7 +11,7 @@
 <dom-module id="invites-fire">
 
   <template>
-    
+    <firebase-document app-name="{{appName}}" path="/invited/{{userId}}" data="{{userData}}"></firebase-document>
   </template>
 
   <script>
@@ -20,17 +20,22 @@
       is: 'invites-fire',
 
       properties: {
-        userId: {
-          type: String,
-          observer: "_userChange"
-        },
+        appName: String,
+        userId: String,
+        userData: Object,
         hasAccess: {
           type: Boolean,
-          value: False
+          value: False,
+          notify: True,
+          reflectToAttribute: True,
+          computed: "_computeAccess(userData)"
         }
       },
-      _userChange: function(){
-
+      _computeAccess: function(newData){
+        if(newData.value){
+          return newData.value;
+        }
+        return False
       }
 
     });
